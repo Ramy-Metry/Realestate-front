@@ -20,7 +20,7 @@ const Contact = () => {
                                     <div className="contact-item">
                                         <i className="fas fa-envelope"></i>
                                         <h5>البريد الالكتروني</h5>
-                                        <h6>samersamir@gmail.com</h6>
+                                        <h6>whitehouse@lookforestatel.com</h6>
                                     </div>
                                 </div>
                                 <div className="col-lg-4">
@@ -34,7 +34,7 @@ const Contact = () => {
                                     <div className="contact-item">
                                         <i className="fas fa-phone-alt"></i>
                                         <h5>رقم الهاتف</h5>
-                                        <h6>+20 122 994 0375</h6>
+                                        <h6>01229940375</h6>
                                     </div>
                                 </div>
                             </div>
