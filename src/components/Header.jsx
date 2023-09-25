@@ -14,19 +14,19 @@ const Header = () => {
                            
                             </div>
                         </Link>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
-                        </button>
+                        </button> */}
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav ms-auto">
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/">الصفحه الرئيسيه</Link>
+                                    <Link className="nav-link" to="/whitehouse/">الصفحه الرئيسيه</Link>
                                 </li>
                                 {/* <li className="nav-item">
                                     <Link  className="nav-link" to="/blog">Blog</Link>
                                 </li> */}
                                 <li className="nav-item">
-                                    <Link  className="nav-link" to="/about">من نحن</Link>
+                                    <Link  className="nav-link" to="/whitehouse/about">من نحن</Link>
                                 </li>
                                 {/* <li className="nav-item">
                                     <Link className="nav-link" to="#">Category <i className="fas fa-chevron-down"></i></Link>
@@ -37,7 +37,7 @@ const Header = () => {
                                     </ul>
                                 </li> */}
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/contact">اتصل بنا</Link>
+                                    <Link className="nav-link" to="/whitehouse/contact">اتصل بنا</Link>
                                 </li>
                             </ul>
                         </div>
