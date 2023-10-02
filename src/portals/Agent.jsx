@@ -7,17 +7,24 @@ import Contact from "../components/Contact";
 import About from "../components/About";
 // import Blog from "../components/Blog";
 // import BlogDetail from "../components/BlogDetail";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes,useLocation  } from "react-router-dom";
+import AdminLogin from "../components/agent/AdminLogin";
+import AddProperty from "../components/agent/AddProperty"
 
 function Agent() {
+  const location = useLocation();
+  console.log(location)
+
   return (
     <div>
-      <Header />
+       {location.pathname !== "/white-house/login" && <Header />}
      
       <Routes>
         <Route path="/"  element={<Home />}/>
         <Route path="/contact"  element={<Contact />}/>
         <Route path="/about"  element={<About />}/>
+        <Route path="/login" element={<AdminLogin/>}/>
+        <Route path="/add-property" element={<AddProperty/>}/>
      {/* <Route path="/" exact component={Home}></Route>
       <Route path="/contact" component={Contact}></Route>
       <Route path="/about" component={About}></Route>
@@ -25,7 +32,8 @@ function Agent() {
       <Route path="/blog/:id" component={BlogDetail}></Route>
       <Route path="/flat/:slug" component={FlatDetail}></Route> */}
       </Routes>
-      <Footer />
+      {location.pathname !== "/white-house/login" && <Footer />}
+
     </div>
   );
 }
