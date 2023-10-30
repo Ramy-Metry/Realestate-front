@@ -2,25 +2,32 @@ import "./App.css";
 import FlatDetail from "./components/FlatDetail";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
+
 import Contact from "./components/Contact";
 import About from "./components/About";
+import Home from "./components/Home";
 import Blog from "./components/Blog";
 import BlogDetail from "./components/BlogDetail";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <Route path="/" exact component={Home}></Route>
-      <Route path="/contact" component={Contact}></Route>
-      <Route path="/about" component={About}></Route>
-      <Route path="/blog" exact component={Blog}></Route>
-      <Route path="/blog/:id" component={BlogDetail}></Route>
-      <Route path="/flat/:slug" component={FlatDetail}></Route>
-      <Footer />
-    </Router>
+    <>
+    <Header/>
+    <Routes>
+   
+       <Route path="/" exact element={<Home />}></Route>
+     <Route path="/contact" element={<Contact />}></Route>
+    <Route path="/about" element={<About/>}></Route>
+      <Route path="/blog" exact element={<Blog/>}></Route>
+      <Route path="/blog/:id" element={<BlogDetail/>}></Route>
+      <Route path="/flat/:slug" element={<FlatDetail/>}></Route>
+  
+ 
+    </Routes>
+    <Footer/>
+    </>
   );
 }
 
