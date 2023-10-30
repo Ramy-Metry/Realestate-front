@@ -1,5 +1,5 @@
 const baseURL = {
-  backend: "https://backend.lookforestate.com",
+  backend: "https://crm-server.lookforestate.com",
   local:"http://localhost:5000"
 };
 

@@ -20,13 +20,13 @@ const Header = () => {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav ms-auto">
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/white-house/">الصفحه الرئيسيه</Link>
+                                    <Link className="nav-link" to="/">الصفحه الرئيسيه</Link>
                                 </li>
                                 {/* <li className="nav-item">
                                     <Link  className="nav-link" to="/blog">Blog</Link>
                                 </li> */}
                                 <li className="nav-item">
-                                    <Link  className="nav-link" to="/white-house/about">من نحن</Link>
+                                    <Link  className="nav-link" to="/about">من نحن</Link>
                                 </li>
                                 {/* <li className="nav-item">
                                     <Link className="nav-link" to="#">Category <i className="fas fa-chevron-down"></i></Link>
@@ -37,7 +37,7 @@ const Header = () => {
                                     </ul>
                                 </li> */}
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/white-house/contact">اتصل بنا</Link>
+                                    <Link className="nav-link" to="/contact">اتصل بنا</Link>
                                 </li>
                             </ul>
                         </div>
