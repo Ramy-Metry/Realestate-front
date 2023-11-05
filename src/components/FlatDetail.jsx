@@ -6,34 +6,32 @@ import { getPropertyById } from "../services/property";
 
 const FlatDetail = () => {
   let location = useLocation();
-    const [property,setProperty]=useState({})
-    const [propertyImages,setPropertyImages]=useState([])
-    const [amenities,setAmenities]=useState([])
-    let images=[]
+  const [property, setProperty] = useState({});
+  const [propertyImages, setPropertyImages] = useState([]);
+  const [amenities, setAmenities] = useState([]);
+  let images = [];
   useEffect(() => {
     let inputString = location.pathname;
     const parts = inputString.split("/");
     const desiredPart = parts[2];
-    getPropertyById(desiredPart).then(res=>{
-        setProperty(res.data.property)
-        setPropertyImages(res.data.property.propertyPhotos)
-        setAmenities(res.data.property.communityAmenities.split("-"))
-    })
-  }, property);
+    getPropertyById(desiredPart).then((res) => {
+      setProperty(res.data.property);
+      setPropertyImages(res.data.property.propertyPhotos);
+      setAmenities(res.data.property.communityAmenities.split("-"));
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  
- for(const [key,value] of Object.entries(propertyImages)){
-    if(key>1){
-       images.push({
-              original: value.img,
-              thumbnail: value.img,
-            })  
+  for (const [key, value] of Object.entries(propertyImages)) {
+    if (key > 1) {
+      images.push({
+        original: value.img,
+        thumbnail: value.img,
+      });
     }
   }
 
-
-console.log(property)
-
+  console.log(property);
 
   return (
     <div className="flat-detail">
@@ -56,7 +54,6 @@ console.log(property)
                   {`${property.propertyType} ${property.squareFootage} متر`}
                 </h3>
                 <p className="fd-address">
-                 
                   <i className="fas fa-map-marker-alt"></i>
                   {property.propertyAddress}
                 </p>
@@ -77,10 +74,7 @@ console.log(property)
               <div className="col-lg-8">
                 <div className="fd-item">
                   <h4>التفاصيل</h4>
-                  <p>
-                   {property.propertyDescription}
-                   
-                  </p>
+                  <p>{property.propertyDescription}</p>
                   <p>{property.internalNotesOrComments}</p>
                 </div>
                 <div className="fd-item fd-property-detail">
@@ -99,7 +93,6 @@ console.log(property)
                       <span>{property.numberofBathrooms}</span>
                     </div>
                   </div>
-                
                 </div>
                 <div className="fd-item fd-features">
                   <h4>السمات</h4>
@@ -146,7 +139,7 @@ console.log(property)
                     </div>
                   </div>
                 </div>
-                <div className="fd-item">
+                {/* <div className="fd-item">
                   <h4>Maps</h4>
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15105200.564429!2d37.91245092855647!3d38.99130948591772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2zVMO8cmtpeWU!5e0!3m2!1str!2str!4v1630158674074!5m2!1str!2str"
@@ -154,7 +147,7 @@ console.log(property)
                     height="450"
                     loading="lazy"
                   ></iframe>
-                </div>
+                </div> */}
               </div>
               <div className="col-lg-4">
                 <div className="fd-sidebar-item">
@@ -175,9 +168,11 @@ console.log(property)
                 <div className="fd-sidebar-item">
                   <h4>مزايا</h4>
                   <ul className="category-ul">
-                    {amenities.map(x=>(<div>
+                    {amenities.map((x, idx) => (
+                      <div key={idx}>
                         <li>{x}</li>
-                    </div>))}
+                      </div>
+                    ))}
                   </ul>
                 </div>
                 <div className="fd-sidebar-item">
